@@ -258,13 +258,33 @@ export default class Main extends React.Component {
 						<SelectLanguage/>
 						<SelectColorTheme/>
 						<div>
-							<h3 style={{marginTop: 20, marginBottom: 6}}>Black Mage in the Shell</h3>
+							<h3 style={{marginTop: 20, marginBottom: 6}}>Black Mage in the Shell (Endwalker)</h3>
 							{localize({
 								en: <div style={{marginBottom: 16}}>Last updated: {changelog[0].date} (see <b>About this
 									tool/Changelog</b>) (see my <a href={"https://coda.io/d/_d-N3WFoMZ8e/Black-Mage-in-the-Shell_suRLF"}>roadmap</a>)
 								</div>,
 								zh: <div style={{marginBottom: 16}}>最近更新（月日年）：{changelog[0].date}（详见<b>关于/更新日志</b>）（<a href={"https://coda.io/d/_d-N3WFoMZ8e/Black-Mage-in-the-Shell_suRLF"}>开发计划</a>）</div>
 							})}
+
+							<div style={{
+								borderRadius: 4,
+								border: "1px solid " + colors.accent,
+								padding: "5px 10px",
+								color: colors.accent
+							}}>
+								{localize({
+									en: <div>
+										<div className={"paragraph"}>
+											This page is the archive of Black Mage in the Shell at the end of Endwalker. <a href={"https://github.com/miyehn/ffxiv-blm-rotation-endwalker"}>Github repository here</a>. In the next few days it will also be updated to include some notable fight plans. For Dawntrail BLM, go to the <a href={"https://miyehn.me/ffxiv-blm-rotation"}>original site</a> which will contain the latest updates.
+										</div>
+									</div>,
+									zh: <div>
+										<div className={"paragraph"}>
+											这是黑魔排轴器的6.0历史纪念版本。<a href={"https://github.com/miyehn/ffxiv-blm-rotation-endwalker"}>Github仓库在这里</a>。近期这里也会更新展示一些有纪念意义的副本轴给大家参观。7.0版本将会在<a href={"https://miyehn.me/ffxiv-blm-rotation"}>原排轴器地址</a>继续更新。
+										</div>
+									</div>
+								})}
+							</div>
 
 							<IntroSection/>
 						</div>

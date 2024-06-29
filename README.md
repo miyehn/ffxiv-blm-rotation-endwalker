@@ -1,3 +1,13 @@
+This is the public archive of Black Mage in the Shell at the end of FFXIV's Endwalker expansion. It is hosted at [Black Mage in the Shell (Endwalker)](https://miyehn.me/ffxiv-blm-rotation-endwalker). You can go there to see Black Mage at its full glory.
+
+In the next few days it will also be updated to include some notable fight plans so stay tuned.
+
+If you want to make plans for Dawntrail BLM, go to the original site at [Black Mage in the Shell](htttps://miyehn.me/ffxiv-blm-rotation).
+
+Remember us... Remember that we once lived...
+
+---
+
 # Black Mage in the Shell
 
 FFXIV black mage job simulator & rotation planner.
