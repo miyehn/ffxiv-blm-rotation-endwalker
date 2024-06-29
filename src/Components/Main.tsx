@@ -26,7 +26,7 @@ export let setHistorical = (inHistorical: boolean) => {};
 function handleUrlCommands(command?: string) {
 	if (command === "resetAll") {
 		clearCachedValues();
-		window.location.href = "/ffxiv-blm-rotation";
+		window.location.href = "/ffxiv-blm-rotation-endwalker";
 	}
 	else if (command === "resetResourceOverrides") {
 		let strOld = getCachedValue("gameRecord");
@@ -43,7 +43,7 @@ function handleUrlCommands(command?: string) {
 				setCachedValue("gameRecord" + i.toString(), JSON.stringify(content));
 			}
 		}
-		window.location.href = "/ffxiv-blm-rotation";
+		window.location.href = "/ffxiv-blm-rotation-endwalker";
 	}
 	else if (command !== undefined) {
 		console.log("unrecognized command '" + command + "'");

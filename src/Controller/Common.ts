@@ -32,7 +32,7 @@ export function containsEwCacheContent(): boolean {
 	return bContainsEwCacheContent;
 }
 
-const thisExpansion: Expansion = Expansion.DT; // change here in ew archive
+const thisExpansion: Expansion = Expansion.EW;
 
 export function getCachedValue(key: string): string | null {
 
