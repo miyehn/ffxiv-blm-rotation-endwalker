@@ -1,6 +1,6 @@
 import React, {ChangeEvent, CSSProperties} from 'react'
 import {
-	asyncFetch,
+	asyncFetch, asyncFetchJson,
 	ContentNode,
 	Expandable,
 	FileFormat,
@@ -50,17 +50,6 @@ const enum DurationInputMode {
 	Duration = "duration",
 	EndTime = "endTime"
 }
-let asyncFetchJson = function(url: string, callback: (content: any)=>void) {
-	asyncFetch(url, data=>{
-		try {
-			let content = JSON.parse(data);
-			callback(content);
-		} catch {
-			console.log("parse error");
-		}
-	});
-}
-
 function LoadCombinedTracksBtn(props: {displayName: ContentNode, url: string}) {
 	let style: CSSProperties = {
 		marginRight: 4,

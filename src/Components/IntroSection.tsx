@@ -29,7 +29,7 @@ export function IntroSection(props: {}) {
 	let colors = getCurrentThemeColors();
 	return <div>
 		<Expandable
-			defaultShow={true}
+			defaultShow={false}
 			title={"instructions"}
 			titleNode={<span>{localize({en: "Instructions ", zh: "使用说明 ", ja: "使い方"})}
 				<Help topic={"expandable"} content={localize({en:"click me to expand or collapse", zh: "点击展开/折叠"})}/></span>}

@@ -134,6 +134,17 @@ export function asyncFetch(
 	});
 }
 
+export let asyncFetchJson = function(url: string, callback: (content: any)=>void) {
+	asyncFetch(url, data=>{
+		try {
+			let content = JSON.parse(data);
+			callback(content);
+		} catch {
+			console.log("parse error");
+		}
+	});
+}
+
 export function parseTime(timeStr: string) : number {
 	let val = timeStr.trim();
 	let sign = 1;
