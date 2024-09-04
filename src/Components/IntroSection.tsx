@@ -143,7 +143,7 @@ export function IntroSection(props: {}) {
 					en: <div className={"paragraph"}>
 						If you have questions,
 						encountered bugs, or would like to suggest features, you can find me on discord
-						(miyehn), or via email (rainduym@gmail.com). In case of sending me a bug report, attaching the
+						(miyehn), or via email (ellyn.waterford@gmail.com). In case of sending me a bug report, attaching the
 						fight record (download "fight.txt" from the right or name it anything else) would be very helpful.
 					</div>,
 					zh: <div className={"paragraph"}>
@@ -234,7 +234,7 @@ export function IntroSection(props: {}) {
 						{localize ({
 							en:
 								<div className="paragraph">
-									8/29/23: Cast and recast times under LL are technically wrong. Currently it's just implemented as base time * 0.85 which can have at most 0.01s error. Vanilla Milksmoothie proposed a formula
+									8/29/23: Cast and recast times under LL are technically wrong. Currently it's just implemented as base time * 0.85 which can have at most 0.01s error. 米露可丝沐希 proposed a formula
 									that gives what matches the game exactly, but I don't have time to implement it at this moment plus it might break legacy txt files.
 									Let me know if this is causing problems for you, and I'll put it back onto my agenda.
 								</div>,

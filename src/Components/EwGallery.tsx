@@ -8,7 +8,8 @@ type EntryProps = {
 	name: ContentNode,
 	plan: string,
 	markers?: string,
-	details?: LocalizedContent[]
+	details?: LocalizedContent[],
+	key?: string
 }
 
 function Entry(props: EntryProps) {
@@ -51,7 +52,7 @@ function Fight(props: {name: ContentNode, plans: EntryProps[]}) {
 	return <div >
 		<div><b>{props.name}</b></div>
 		<div style={{marginTop: 10, marginBottom: 10, marginLeft: 20}}>
-			{props.plans.map(entry => <Entry key={entry.plan} {...entry}/>)}
+			{props.plans.map(entry => <Entry key={entry.key ?? entry.plan} {...entry}/>)}
 		</div>
 	</div>
 }
@@ -85,7 +86,7 @@ export function EndwalkerGallery() {
 					markers: "dsr_tracks_all_p4.txt"
 				},
 				{
-					name: localize({en: "P4 to P5 rewind updated for LPDU R2", zh: "P4.5"}),
+					name: localize({en: "P4 to P5 rewind updated for LPDU R2", zh: "P4.5适用欧服攻略版"}),
 					plan: "dsr_fight_p4_to_p5_rewind_updatedForLPDUR2.txt",
 					markers: "dsr_tracks_all_p4_to_p5_rewind.txt"
 				},
@@ -153,6 +154,27 @@ export function EndwalkerGallery() {
 					]
 				},
 			]}/>
+			<Fight name={localize({en: "Zurvan (Unreal)", zh: "幻鬼神"})} plans={[
+				{
+					name: localize(({en: "Zurvan", zh: "幻鬼神"})),
+					plan: "幻鬼神.txt",
+					markers: "zurvan.txt"
+				}
+			]}/>
+			<Fight name={localize({en: "Zeromus (Extreme)", zh: "极泽洛姆斯"})} plans={[
+				{
+					name: localize(({en: "Zeromus (cast Rend the Rift at 6:18 markers)", zh: "极泽洛姆斯（标记6:18读条次元干涉）"})),
+					plan: "泽洛姆斯.txt",
+					markers: "zeromus_618.txt",
+					key: "zeromus1"
+				},
+				{
+					name: localize(({en: "Zeromus (cast Rend the Rift at 6:29 markers)", zh: "极泽洛姆斯（标记6:29读条次元干涉）"})),
+					plan: "泽洛姆斯.txt",
+					markers: "zeromus_629.txt",
+					key: "zeromus2"
+				},
+			]}/>
 		</div>
 		<div style={{flex: 1}}>
 			<Fight name={"P9S"} plans={[
@@ -170,6 +192,11 @@ export function EndwalkerGallery() {
 					name: localize(({en: "No B3/B4", zh: "零冰3冰4"})),
 					plan: "P9S 零冰3冰4.txt",
 					markers: "p9s.txt"
+				},
+				{
+					name: "P9S",
+					plan: "P9S axgg.txt",
+					markers: "p9s.txt"
 				}
 			]}/>
 			<Fight name={"P10S"} plans={[
@@ -182,12 +209,22 @@ export function EndwalkerGallery() {
 					name: localize(({en: "Speedrun", zh: "速刷"})),
 					plan: "P10S 速刷.txt",
 					markers: "p10s.txt"
+				},
+				{
+					name: "P10S",
+					plan: "P10S axgg.txt",
+					markers: "p10s.txt"
 				}
 			]}/>
 			<Fight name={"P11S"} plans={[
 				{
 					name: localize(({en: "rd plan", zh: "rd轴"})),
 					plan: "P11S rd轴 ①.txt",
+					markers: "p11s.txt"
+				},
+				{
+					name: "P11S",
+					plan: "P11S axgg.txt",
 					markers: "p11s.txt"
 				}
 			]}/>
@@ -217,6 +254,11 @@ export function EndwalkerGallery() {
 					name: localize(({en: "rd plan (old, can't be fully loaded)", zh: "rd轴（旧，无法完整加载）"})),
 					plan: "p5s rd轴 旧.txt",
 					markers: "p5s.txt"
+				},
+				{
+					name: "P5S",
+					plan: "P5S maki-pray.txt",
+					markers: "p5s.txt"
 				}
 			]}/>
 			<Fight name={"P6S"} plans={[
@@ -231,36 +273,30 @@ export function EndwalkerGallery() {
 					name: localize(({en: "rd plan", zh: "rd轴"})),
 					plan: "P7S rd轴 ①.txt",
 					markers: "p7s.txt"
+				},
+				{
+					name: "P7S",
+					plan: "P7S pray.txt",
+					markers: "p7s.txt"
 				}
 			]}/>
-			{/*
-		<Fight name={localize({en: "P8S Doorboss", zh: "P12S门神"})} plans={[
-			{
-				name: localize(({en: "Doorboss plan (snake)", zh: "门神时间轴（蛇）"})),
-				plan: "P8S门神时间轴（蛇）.txt",
-				//markers: "p8sp1.txt"
-			}
-		]}/>
-		*/}
+			<Fight name={localize({en: "P8S Doorboss", zh: "P8S门神"})} plans={[
+				{
+					name: localize(({en: "Doorboss plan (snake)", zh: "门神时间轴（蛇）"})),
+					plan: "P8S doorboss pray.txt",
+					markers: "p8sp1_snake.txt"
+				}
+			]}/>
 			<Fight name={localize({en: "P8S P2", zh: "P8S本体"})} plans={[
 				{
 					name: localize(({en: "rd plan", zh: "rd轴"})),
 					plan: "P8S本体 rd轴 ①.txt",
 					markers: "p8sp2.txt"
-				}
-			]}/>
-			<Fight name={localize({en: "Zurvan (Unreal)", zh: "幻鬼神"})} plans={[
+				},
 				{
-					name: localize(({en: "Zurvan", zh: "幻鬼神"})),
-					plan: "幻鬼神.txt",
-					markers: "zurvan.txt"
-				}
-			]}/>
-			<Fight name={localize({en: "Zeromus (Extreme)", zh: "极泽洛姆斯"})} plans={[
-				{
-					name: localize(({en: "Zeromus", zh: "极泽洛姆斯"})),
-					plan: "泽洛姆斯.txt",
-					//markers: "zurvan.txt"
+					name: "P8S P2",
+					plan: "P8S p2 pray.txt",
+					markers: "p8sp2.txt"
 				}
 			]}/>
 		</div>
@@ -280,8 +316,8 @@ export function EndwalkerGallery() {
 			</div>
 		</div>
 		<div className={"paragraph"}>{localize({
-			en: "This collection of player submissions showcases Endwalker Black Mages' love and dedication to this job.",
-			zh: "这些是来自黑魔玩家们的时间轴投稿，在此展示以纪念6.X时期黑魔们对这个职业的喜爱和热情。"
+			en: "These player submissions showcase Endwalker Black Mages' love and dedication to this job. All plans below are from group 不打冰3攻略组 unless noted otherwise.",
+			zh: "这些是来自黑魔玩家们的时间轴投稿，在此展示以纪念6.X时期黑魔们对这个职业的喜爱和热情。如非特别注明，以下时间轴均来自不打冰3攻略组。"
 		})}</div>
 		{localize({
 			en: <div className={"paragraph"}>

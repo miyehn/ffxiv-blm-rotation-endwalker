@@ -1,5 +1,11 @@
 [
 	{
+		"date": "9/2/24",
+		"changes": [
+			"Gallery initial update"
+		]
+	},
+	{
 		"date": "6/21/24",
 		"changes": [
 			"Fixed a tiny bug (yeah I'm back): when switching language, source of damage on the timeline now updates just like the rest of UI",
